@@ -1,0 +1,39 @@
+===
+string type
+===
+
+name: @"hello"
+
+---
+
+(source_file
+  (region (label)
+    (string)))
+
+===
+zero pad type
+===
+
+blank: @zp(8)
+
+---
+
+(source_file
+  (region (label)
+    (zero_pad (number))))
+
+===
+decimal numbers
+===
+
+xyz: @l16(8)
+foo: @l32(-16)
+abc: @wl(8)
+
+---
+
+(source_file
+  (region (label) (decimal (number)))
+  (region (label) (decimal (number)))
+  (region (label) (decimal (number))))
+

@@ -1,0 +1,42 @@
+===
+bare content
+===
+
+ABCD
+
+---
+
+(source_file (hex_content))
+
+===
+with space
+===
+
+AB   CD
+  01
+
+  CD
+
+---
+
+(source_file 
+  (hex_content)
+  (hex_content)
+  (hex_content)
+  (hex_content))
+
+===
+with comments
+===
+34 45 ; Some sort of comment
+43 12 ; Some other comment
+---
+
+(source_file 
+  (hex_content)
+  (hex_content)
+  (comment)
+  (hex_content)
+  (hex_content)
+  (comment))
+

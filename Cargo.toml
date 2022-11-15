@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "hexspec-cli",
+  "hexspec",
+]
+

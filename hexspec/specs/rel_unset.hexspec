@@ -1,0 +1,13 @@
+; Simple Open Framing Header
+sofh:
+.length:     00000054 ; SOFH Header
+.encoding:   EB50     ; SOFH Encoding
+
+; Simple Binary Encoding Header
+sbe:
+.length:    2A00 ; SBE Block Length
+.template:  6200 ; SBE Template ID
+.schema:    5B00 ; SBE Schema ID
+._:         1234 ; Some Reserved bytes
+.version:   0000 ; SBE Version
+

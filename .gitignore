@@ -1,0 +1,7 @@
+/target
+
+/editor/tree-sitter-hexspec/.local
+/editor/tree-sitter-hexspec/.tests
+/editor/tree-sitter-hexspec/node_modules
+/editor/tree-sitter-hexspec/build/
+

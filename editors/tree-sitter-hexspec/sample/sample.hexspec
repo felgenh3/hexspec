@@ -1,0 +1,9 @@
+    name:
+.content: @"hello"
+      ._: @zp(3)
+
+  _:
+     @zp(8)
+age:
+     @b(21)
+

@@ -1,0 +1,133 @@
+===
+abs labels
+===
+
+sohf:
+  00000054
+  EB50
+  
+---
+
+(source_file
+  (region (label)
+    (hex_content)
+    (hex_content)))
+
+===
+multi abs labels
+===
+
+sofh:
+  00000054 
+  EB50     
+
+
+sbe:
+  2A00 
+  6200 
+  5B00 
+  0000 
+
+---
+
+(source_file
+  (region (label)
+    (hex_content)
+    (hex_content))
+  (region (label)
+    (hex_content)
+    (hex_content)
+    (hex_content)
+    (hex_content)))
+
+===
+single rel label
+===
+
+sofh:
+.length:     00000054 
+.encoding:   EB50     
+---
+
+(source_file
+  (region (label)
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))))
+
+===
+multi rel label
+===
+sofh:
+.length:     00000054 
+.encoding:   EB50     
+sbe:
+.length: 2A00 
+.template: 6200 
+.schema: 5B00 
+.version: 0000 
+---
+
+(source_file
+  (region (label)
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content)))
+  (region (label)
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))))
+
+===
+unset abs
+===
+sofh:
+  00000054 
+  EB50     
+_:
+  0000 0000 
+sbe:
+  2A00 
+  6200 
+  5B00 
+  0000 
+---
+
+(source_file
+  (region (label) 
+    (hex_content)
+    (hex_content))
+  (region (label)
+    (hex_content)
+    (hex_content))
+  (region (label)
+    (hex_content)
+    (hex_content)
+    (hex_content)
+    (hex_content)))
+
+===
+unset subregions
+===
+
+sofh:
+  .length:     00000054 
+  .encoding:   EB50     
+sbe:
+  .length:    2A00 
+  .template:  6200 
+  .schema:    5B00 
+  ._:         1234 
+  .version:   0000 
+---
+
+(source_file
+  (region (label)
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content)))
+  (region (label)
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))
+    (subregion (sublabel) (hex_content))))
+      

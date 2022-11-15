@@ -1,0 +1,25 @@
+; Simple Open Framing Header
+   sofh:
+.length: @db(63) ; SOFH message length
+   .sig: EB50    ; SOFH Encoding SBE little endian
+
+; Simple Binary Encoding Header
+      sbe:
+  .length: @l16(55) ; SBE Block Length
+.template: @wl(99)  ; SBE Template ID
+  .schema: @wl(91)  ; SBE Schema ID
+ .version: @zp(2)   ; SBE Schema Version
+
+; Single Order
+single_order:
+  .cl_ord_id: @"ORD00006"     ; ascii "ORD00006"
+    .account: @"ACCT96\0\0"   ; ascii "ACCT96"
+     .symbol: @"GEM1\0\0\0\0" ; ascii "GEM1"
+       .side: 32              ; encoded for Sell
+   .transact: @l64(0)         ; 1970-1-1T00:00:00.000Z Too lazy to put value here
+  .order_qty: @l32(5)         ; 5
+   .ord_type: 31              ; Market
+      .price: @l64(100500)    ; 100.500
+    .stop_px: @ql(0)          ; Null
+  .exec_inst: 04              ; Not Held
+
