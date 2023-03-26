@@ -113,7 +113,7 @@ impl HexSpecIR<'_> {
             if let Some(input) = line.label {
                 match input.extra.as_ref() {
                     Label::Abs(name) => {
-                        if tl_labels.contains(*name) {
+                        if name != &"_" && tl_labels.contains(*name) {
                             return Err((input, ParseError::DuplicateLabel).into());
                         }
 
@@ -143,7 +143,7 @@ impl HexSpecIR<'_> {
 
                     Label::Rel(name) => {
                         if let Some((abs_label, _, rel_labels)) = &mut abs_label_partial {
-                            if rel_labels.contains(name) {
+                            if name != &"_" && rel_labels.contains(name) {
                                 return Err((input, ParseError::DuplicateLabel).into());
                             }
 
