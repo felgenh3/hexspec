@@ -50,6 +50,7 @@ impl<'a, T> Parsed<'a, T> {
         }
     }
 
+    #[cfg(any(feature = "parse", test))]
     pub fn attribution(&self) -> &str {
         self.attribution
     }

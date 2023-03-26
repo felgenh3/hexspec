@@ -7,6 +7,10 @@ description = "A dsl for creating and verifying byte buffers"
 license-file = "../LICENSE"
 repository = "https://github.com/felgenh3/hexspec"
 
+[features]
+default = [ ]
+parse = [ ]
+
 [dependencies]
 nom = "7.1"
 nom_locate = "4.0"

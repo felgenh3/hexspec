@@ -8,9 +8,17 @@
 mod test;
 
 mod fmt;
+#[cfg(feature = "parse")]
 pub mod parse;
 
+#[cfg(not(feature = "parse"))]
+mod parse;
+
+#[cfg(feature = "parse")]
 pub use parse::{Context, Contextualized, ParseError};
+
+#[cfg(not(feature = "parse"))]
+use parse::{Contextualized, ParseError};
 use std::path::Path;
 
 /// An error describing how loading a HexSpec can go wrong

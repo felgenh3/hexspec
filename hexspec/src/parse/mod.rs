@@ -167,7 +167,7 @@ impl HexSpecIR<'_> {
                 }
             }
 
-            let bytes = line.bytes();
+            let bytes = line.bytes.extra.as_slice();
             cur += bytes.len();
             buf.extend(bytes);
         }
@@ -190,6 +190,7 @@ impl HexSpecIR<'_> {
     }
 }
 
+#[cfg(feature = "parse")]
 impl<'a> LineIR<'a> {
     /// check whether a line contains any syntatical element
     pub fn is_empty(&self) -> bool {
