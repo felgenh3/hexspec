@@ -38,7 +38,7 @@ impl<'a, T> Parsed<'a, T> {
             let (input, value) = p.parse(input)?;
             let end = input;
 
-            let context = unsafe { merge_contiguous_strings(start.as_ref(), end.as_ref()) };
+            let context = unsafe { merge_contiguous_strings(&start, &end) };
             let attribution = context.trim();
 
             let diff = attribution.as_ptr() as usize - context.as_ptr() as usize;

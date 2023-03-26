@@ -13,9 +13,9 @@ fn parse_label(input: Input) -> ParseResult<Label> {
     let (input, _) = char(':')(input)?;
 
     let label = if is_rel.is_some() {
-        Label::Rel(name.as_ref())
+        Label::Rel(&name)
     } else {
-        Label::Abs(name.as_ref())
+        Label::Abs(&name)
     };
 
     Ok((input, label))
