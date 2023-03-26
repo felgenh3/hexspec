@@ -94,7 +94,7 @@ dependencies = [
 
 [[package]]
 name = "hexspec"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "nom",
  "nom_locate",
@@ -103,7 +103,7 @@ dependencies = [
 
 [[package]]
 name = "hexspec-cli"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "clap",
  "eyre",
